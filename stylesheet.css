@@ -1,0 +1,63 @@
+*{
+  letter-spacing: 0.05em;
+}
+html{
+  scroll-behavior: smooth;
+}
+header{
+  background: #60b0b0;
+  height: 130px;
+  width: 100%;
+}
+h1{
+  vertical-align: middle;
+}
+.nav{
+  background: #e0e0e0;
+}
+#skill{
+  padding-top: 4em;
+  margin-top: -4em;
+}
+#plofile{
+  padding-top: 4em;
+  margin-top: -4em;
+}
+#contact{
+  padding-top: 4em;
+  margin-top: -4em;
+}
+body{
+  background: #f0f0f0;
+}
+label{
+  font-weight: bold;
+}
+table{
+  width:100% /3;
+}
+td{
+  text-align: right;
+  padding-left: 10px;
+}
+li{
+  font-weight: bold;
+}
+.indent{
+  text-indent: -1em;
+  padding-left: 2em;
+}
+#thxMessage{
+  padding: 150px;
+}
+footer{
+  background: #60b0b0;
+  height: 40px;
+  font-size: 20px;
+  color: white;
+}
+#end a{
+  color: white;
+  float: right;
+  margin-right:1em;
+}
