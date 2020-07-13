@@ -1,63 +1,261 @@
 *{
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
 }
 html{
   scroll-behavior: smooth;
 }
-header{
-  background: #60b0b0;
-  height: 130px;
-  width: 100%;
-}
-h1{
-  vertical-align: middle;
-}
-.nav{
-  background: #e0e0e0;
-}
-#skill{
-  padding-top: 4em;
-  margin-top: -4em;
-}
-#plofile{
-  padding-top: 4em;
-  margin-top: -4em;
-}
-#contact{
-  padding-top: 4em;
-  margin-top: -4em;
-}
 body{
-  background: #f0f0f0;
+  background: whitesmoke;
+  font-family: "Helvetica Neue",
+  Arial,
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
 }
-label{
-  font-weight: bold;
+#main{
+  margin: 0 10%;
 }
-table{
-  width:100% /3;
+h2{
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
 }
-td{
-  text-align: right;
-  padding-left: 10px;
+h2::after{
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: -1;
+  content: "";
+  display: block;
+  height: 8px;
+  width: 100%;
+  background-color: orange;
+  transform: rotate(3deg);
+}
+section{
+  padding-top: 70px;
 }
 li{
+  list-style: none;
+}
+.flex{
+  display: flex;
+}
+.fixed{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* header */
+header{
+  background: lightseagreen;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+}
+h1{
+  font-weight: bold;
+  color: white;
+  /* animation: fadeIn 0.5s ease 0.3s 1 normal; */
+}
+/* nav */
+#nav{
+  background: darkgray;
+}
+#nav ul{
+  display: flex;
+  height: 100%;
+}
+#nav li{
+  height: 50px;
+  box-sizing: border-box;
+  margin: auto;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 14px;
+  padding-top: 8px;
+  
+}
+#nav li:hover{
+  background-color: gray;
+}
+#nav img{
+  height: 24px;
+  width: auto;
+}
+#nav a{
+  text-decoration: none;
+  color: black;
+}
+/* profile-name */
+#profile-name{
+  width: 50%;
   font-weight: bold;
 }
-.indent{
-  text-indent: -1em;
+#profile-name p{
+  font-size: 16px;
+  text-align: left;
+}
+#profile li{
+  text-indent: 2em;
+}
+/* profile-img */
+#profile-img{
+  width: 50%;
+}
+#profile img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* profile-about */
+#profile-about p{
+ font-size: 12px;
+ word-wrap: normal; 
+ text-indent: 1em;
+ letter-spacing: 0.2em;
+}
+
+/* skill */
+#skill{
+  font-weight: bold;
+}
+#skill img{
+  width: 80%;
+  height: auto;
+}
+#skill .flex{
+  justify-content: space-around;
+}
+.flex div{
+  text-align: center;
+  width: 100px;
+}
+#skillbox1,
+#skillbox2{
+  margin-top: 16px;
+}
+
+/* career */
+#career p{
+  text-indent: 1em;
   padding-left: 2em;
+  font-size: 12px;
+  word-wrap: normal;  
+  overflow-y: visible;
+  color: white;
+}
+#career .indent{
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 0;
+}
+#career li{
+  font-weight: bold;
+  color: white;
+}
+#career div{
+  padding: 24px 8px 24px 8px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+#career div::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: -1;
+  width: 105%;
+  height: 80%;
+}
+#c1::after,
+#c3::after{
+  background-color: orange;
+  transform: rotate(3deg);
+  top: 24px;
+  left: -8px;
+}
+#c2::after,
+#c4::after{
+  background-color: lightseagreen;
+  transform: rotate(-3deg);
+  top: 16px;
+  left: -8px;
+}
+
+/* contact */
+#contact input{
+  margin-top: 24px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+#contact input:focus{
+  outline: 0;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+textarea{
+  margin-top: 16px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+textarea:focus{
+  outline: 0;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+.radio-box{
+  margin-top: 16px;
+  font-size: 14px;
+}
+.radio-box input{
+  width: auto !important;
+  margin-top: 0 !important;
 }
 #thxMessage{
   padding: 150px;
 }
+
 footer{
-  background: #60b0b0;
+  position: relative;
+  margin-top: 40px;
+  background: lightseagreen;
   height: 40px;
-  font-size: 20px;
+  font-size: 14px;
   color: white;
+}
+small{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#foot-link{
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 #end a{
   color: white;
   float: right;
   margin-right:1em;
+}
+
+/* PC CSS */
+@media screen and (min-width:1024px){
+ #profile img{
+   width: 60%;
+ } 
 }
