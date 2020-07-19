@@ -1,0 +1,342 @@
+*{
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background: whitesmoke;
+  font-family: "Helvetica Neue",
+  Arial,
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+}
+#main{
+  margin: 0 10%;
+}
+h2{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+h2::after{
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: -1;
+  content: "";
+  display: block;
+  height: 8px;
+  width: 100%;
+  background-color: orange;
+  transform: rotate(3deg);
+}
+section{
+  padding-top: 50px;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: grey;
+}
+.flex{
+  display: flex;
+}
+.fixed{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* header */
+header{
+  background: lightseagreen;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+}
+h1{
+  font-weight: bold;
+  color: white;
+  animation: fadeIn 0.5s;
+}
+/* nav */
+#nav{
+  background: darkgray;
+}
+#nav ul{
+  display: flex;
+  height: 100%;
+}
+#nav li{
+  height: 50px;
+  box-sizing: border-box;
+  margin: auto;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 14px;
+  padding-top: 8px;
+}
+#nav li:hover{
+  background-color: gray;
+}
+#nav img{
+  height: 24px;
+  width: auto;
+}
+#nav a{
+  text-decoration: none;
+  color: black;
+}
+/* profile-name */
+#profile{
+  animation: fadeIn 0.5s;
+  align-items: center;
+}
+#profile-name{
+  width: 50%;
+  font-weight: bold;
+}
+#profile-name p{
+  font-size: 14px;
+  text-align: left;
+}
+#profile li{
+  font-size: 14px;
+  text-indent: 2em;
+}
+/* profile-img */
+#profile-img{
+  margin-top: 16px;
+  width: 50%;
+}
+#profile img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* profile-about */
+#profile-about p{
+ font-size: 12px;
+ word-wrap: normal; 
+ text-indent: 1em;
+ letter-spacing: 0.2em;
+}
+
+/* skill */
+#skill{
+  font-weight: bold;
+}
+#skill img{
+  width: 80%;
+  height: auto;
+}
+#skill .flex div{
+  text-align: center;
+  width: 100px;
+}
+#skillbox1,
+#skillbox2{
+  justify-content: space-around;
+  margin-top: 16px;
+  flex-grow: 1;
+}
+
+/* career */
+#career p{
+  text-indent: 1em;
+  padding-left: 2em;
+  font-size: 12px;
+  word-wrap: normal;  
+  overflow-y: visible;
+  color: white;
+}
+#career .indent{
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 0;
+}
+#career li{
+  font-weight: bold;
+  color: white;
+}
+#career div{
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  padding: 24px 8px 24px 8px;
+}
+.rotate{
+}
+.rotate::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 105%;
+  height: 83%;
+}
+.orange{
+  margin-bottom: 16px;
+}
+.orange::after{
+  background-color: orange;
+  transform: rotate(1deg);
+  top: 24px;
+  left: -8px;
+  z-index: -1;
+}
+.blue{
+  margin-top: 16px;
+}
+.blue::after{
+  background-color: lightseagreen;
+  transform: rotate(-1deg);
+  top: 8px;
+  left: -8px;
+  z-index: -2;
+}
+.bd{
+  border: 1px solid #000;
+}
+
+/* work */
+.card{
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+.scroll{
+  max-height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #000;
+  margin-bottom: 16px;
+}
+.scroll img{
+  width: 100%;
+}
+.card-link{
+  margin-top: 8px;
+  text-align: center;
+}
+.card-link img{
+  width: 10%;
+}
+
+/* contact */
+#contact input{
+  margin-top: 24px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+#contact input:focus{
+  outline: 0;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+textarea{
+  margin-top: 16px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+textarea:focus{
+  outline: 0;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+.radio-box{
+  margin-top: 16px;
+  font-size: 14px;
+}
+.radio-box input{
+  width: auto !important;
+  margin-top: 0 !important;
+}
+#thxMessage{
+  padding: 150px;
+}
+
+footer{
+  position: relative;
+  margin-top: 40px;
+  background: lightseagreen;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+}
+small{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#foot-link{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-bottom: 0;
+}
+#foot-link img{
+  width: 20px;
+  height: auto;
+}
+#end a{
+  color: white;
+  float: right;
+  margin-right:1em;
+}
+
+/* アニメーション */
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* PC CSS */
+@media screen and (min-width:480px){
+  #profile li,
+  #profile p{
+    font-size: 18px;
+    margin-left: 10%;
+  }
+
+  #profile span{
+    display: block;
+  }
+  #profile img{
+   width: 80%;
+   max-width: 250px;
+ }
+ #skill span{
+   display: flex;
+   flex-grow: 1;
+ } 
+ .card{
+  width: 50%;
+}
+#foot-link{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
