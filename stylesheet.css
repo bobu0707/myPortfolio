@@ -19,6 +19,7 @@ body{
   margin: 0 10%;
 }
 h2{
+  margin-top: 16px;
   margin-bottom: 16px;
   position: relative;
   display: inline-block;
@@ -36,10 +37,17 @@ h2::after{
   transform: rotate(3deg);
 }
 section{
-  padding-top: 70px;
+  padding-top: 50px;
 }
 li{
   list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: grey;
 }
 .flex{
   display: flex;
@@ -62,7 +70,7 @@ header{
 h1{
   font-weight: bold;
   color: white;
-  /* animation: fadeIn 0.5s ease 0.3s 1 normal; */
+  animation: fadeIn 0.5s;
 }
 /* nav */
 #nav{
@@ -80,7 +88,6 @@ h1{
   text-align: center;
   line-height: 14px;
   padding-top: 8px;
-  
 }
 #nav li:hover{
   background-color: gray;
@@ -94,19 +101,25 @@ h1{
   color: black;
 }
 /* profile-name */
+#profile{
+  animation: fadeIn 0.5s;
+  align-items: center;
+}
 #profile-name{
   width: 50%;
   font-weight: bold;
 }
 #profile-name p{
-  font-size: 16px;
+  font-size: 14px;
   text-align: left;
 }
 #profile li{
+  font-size: 14px;
   text-indent: 2em;
 }
 /* profile-img */
 #profile-img{
+  margin-top: 16px;
   width: 50%;
 }
 #profile img{
@@ -131,16 +144,15 @@ h1{
   width: 80%;
   height: auto;
 }
-#skill .flex{
-  justify-content: space-around;
-}
-.flex div{
+#skill .flex div{
   text-align: center;
   width: 100px;
 }
 #skillbox1,
 #skillbox2{
+  justify-content: space-around;
   margin-top: 16px;
+  flex-grow: 1;
 }
 
 /* career */
@@ -162,32 +174,65 @@ h1{
   color: white;
 }
 #career div{
-  padding: 24px 8px 24px 8px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  padding: 24px 8px 24px 8px;
 }
-#career div::after{
+.rotate{
+}
+.rotate::after{
   content: "";
   display: inline-block;
   position: absolute;
-  z-index: -1;
   width: 105%;
-  height: 80%;
+  height: 83%;
 }
-#c1::after,
-#c3::after{
+.orange{
+  margin-bottom: 16px;
+}
+.orange::after{
   background-color: orange;
-  transform: rotate(3deg);
+  transform: rotate(1deg);
   top: 24px;
   left: -8px;
+  z-index: -1;
 }
-#c2::after,
-#c4::after{
+.blue{
+  margin-top: 16px;
+}
+.blue::after{
   background-color: lightseagreen;
-  transform: rotate(-3deg);
-  top: 16px;
+  transform: rotate(-1deg);
+  top: 8px;
   left: -8px;
+  z-index: -2;
+}
+.bd{
+  border: 1px solid #000;
+}
+
+/* work */
+.card{
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+.scroll{
+  max-height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #000;
+  margin-bottom: 16px;
+}
+.scroll img{
+  width: 100%;
+}
+.card-link{
+  margin-top: 8px;
+  text-align: center;
+}
+.card-link img{
+  width: 10%;
 }
 
 /* contact */
@@ -244,8 +289,13 @@ small{
 }
 #foot-link{
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
+  padding-bottom: 0;
+}
+#foot-link img{
+  width: 20px;
+  height: auto;
 }
 #end a{
   color: white;
@@ -253,9 +303,40 @@ small{
   margin-right:1em;
 }
 
+/* アニメーション */
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 /* PC CSS */
-@media screen and (min-width:1024px){
- #profile img{
-   width: 60%;
+@media screen and (min-width:480px){
+  #profile li,
+  #profile p{
+    font-size: 18px;
+    margin-left: 10%;
+  }
+
+  #profile span{
+    display: block;
+  }
+  #profile img{
+   width: 80%;
+   max-width: 250px;
+ }
+ #skill span{
+   display: flex;
+   flex-grow: 1;
  } 
+ .card{
+  width: 50%;
+}
+#foot-link{
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
