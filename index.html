@@ -167,10 +167,28 @@
     </section>
 
     <!-- contact -->
+    
+    <!-- PHP contactForm -->
       <section id="contact">
         <h2 class="slide-left">お問い合わせ</h2>
-        <div class="blue contact-bg slide-right">
-          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSegEuZUE4UMxZ7RWTCIN4jDJE8dOc1weE2ajwbQpu0wIoDYOA/formResponse" name="myForm" method="post" target="dummyIframe">
+        <div id="form-box" class="blue contact-bg slide-right">
+          <form method="POST" action="http://localhost/confirm.php">
+            <input id="in_name" type="text" name="name" placeholder="Name" required>
+            <input id="in_company" type="text" name="company" placeholder="Company Name">
+            <input id="in_mail" type="email" name="mailAddress" placeholder="Email" required>
+            <input id="in_tel" type="number" name="tel" placeholder="Phone number" required>
+            <div class="radio-box">
+              <p>お問い合わせの種類</p>
+              <label><input type="radio" name="category" value="お仕事の依頼" checked>お仕事の依頼</label>
+              <label><input type="radio" name="category" value="採用関係">採用関係</label>
+              <label><input type="radio" name="category" value="その他">その他</label>
+            </div>
+            <textarea id="comment" name="comment" placeholder="お問い合わせ内容" rows="5" required></textarea>
+            <input id="submit" type="submit" value="送信">
+          </form>
+
+          <!-- googlefrom 使用時 -->
+          <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSegEuZUE4UMxZ7RWTCIN4jDJE8dOc1weE2ajwbQpu0wIoDYOA/formResponse" name="myForm" method="post" target="dummyIframe">
             <input id="in_name" class="form-control" type="text" name="entry.1884265043" placeholder="Name" required>
             <input id="in_company" class="form-control" type="text" name="entry.1016896215" placeholder="Company Name">
             <input id="in_mail" class="form-control" type="email" name="emailAddress" placeholder="Email" required>
@@ -184,18 +202,19 @@
             <textarea id="comment" class="form-control" name="entry.513669972" placeholder="お問い合わせ内容" rows="5" required></textarea>
             <iframe name="dummyIframe" style="display:none;"></iframe>
             <input id="submit" type="button" value="送信" onclick="submitForm()">
-          </form>
+          </form> -->
         </div>
       </section>
         <div id="thxMessage" style="display:none;"><h4 class="text-center">お問い合わせ頂き、ありがとうございます。<br>2-3営業日中にご回答いたします。</h4></div>
   
-        <script>
+        <!-- googlefrom script -->
+        <!-- <script>
           function submitForm(){
             document.myForm.submit();
             document.getElementById("contact-form").style.display = "none";
             document.getElementById("thxMessage").style.display = "block";
             };
-        </script>
+        </script> -->
   
   </div>
 <!-- footer -->

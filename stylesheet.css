@@ -80,7 +80,7 @@ a:hover{
   z-index: -1;
 }
 .blue{
-  padding: 16px 0;
+  padding: 16px 8px;
   position: relative;
   overflow: hidden;
 }
@@ -95,16 +95,16 @@ a:hover{
   z-index: -2;
 }
 .name-bg::after{
-  top: 8px;
-  height: 90%;
+  top: 0;
+  height: 95%;
 }
 .about-bg::after{
-  top: 8px;
-  height: 88%;
+  top: 0;
+  height: 95%;
 }
 .skill-bg::after{
-  top: 24px;
-  height: 88%;
+  top: 16px;
+  height: 93%;
 }
 .career-bg-1::after{
   top: 16px;
@@ -115,8 +115,8 @@ a:hover{
   height: 84%;
 }
 .contact-bg::after{
-  top: 24px;
-  height: 93%;
+  top: 16px;
+  height: 94%;
 }
 /* animation */
 .slide-left-on{
@@ -278,6 +278,9 @@ h1{
 }
 
 /* contact */
+#form-box{
+  padding-bottom: 36px;
+}
 #contact input{
   margin-top: 24px;
   width: 100%;
@@ -288,7 +291,7 @@ h1{
 }
 #contact input:focus{
   outline: 0;
-  border: 1px solid darkslategray;
+  border: 1px solid black;
   border-radius: 5px;
 }
 textarea{
@@ -301,7 +304,7 @@ textarea{
 }
 textarea:focus{
   outline: 0;
-  border: 1px solid darkslategray;
+  border: 1px solid black;
   border-radius: 5px;
 }
 .radio-box{
@@ -311,6 +314,9 @@ textarea:focus{
 .radio-box input{
   width: auto !important;
   margin-top: 0 !important;
+}
+#submit:hover{
+  background-color: lightgreen;
 }
 #thxMessage{
   padding: 150px;
@@ -378,6 +384,7 @@ footer{
   }
   #profile li{
     margin-left: 10%;
+    font-size: 16px;
   }
   #profile-img{
     margin-top: -248px;
@@ -392,7 +399,7 @@ footer{
   padding-bottom: 24px;
   } 
   .skill-bg::after{
-    height: 78%;
+    height: 85%;
   }
   .card{
     width: 50%;
