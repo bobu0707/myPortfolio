@@ -59,6 +59,39 @@ a:hover{
   top: 0;
   left: 0;
 }
+.base{
+  position: relative;
+}
+.rotate::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 105%;
+  height: 83%;
+}
+.orange{
+  margin-bottom: 16px;
+}
+.orange::after{
+  background-color: orange;
+  transform: rotate(1deg);
+  top: 24px;
+  left: -8px;
+  z-index: -1;
+}
+.blue{
+  margin-top: 16px;
+}
+.blue::after{
+  background-color: lightseagreen;
+  transform: rotate(-1deg);
+  top: 8px;
+  left: -8px;
+  z-index: -2;
+}
+.bd{
+  border: 1px solid #000;
+}
 
 /* header */
 header{
@@ -104,10 +137,11 @@ h1{
 #profile{
   animation: fadeIn 0.5s;
   align-items: center;
+  font-weight: bold;
 }
 #profile-name{
-  width: 50%;
-  font-weight: bold;
+  width: 100%;
+  flex-direction: column;
 }
 #profile-name p{
   font-size: 14px;
@@ -121,6 +155,9 @@ h1{
 #profile-img{
   margin-top: 16px;
   width: 50%;
+  position: absolute;
+  top: -20%;
+  left: 50%;
 }
 #profile img{
   width: 100%;
@@ -159,19 +196,14 @@ h1{
 #career p{
   text-indent: 1em;
   padding-left: 2em;
-  font-size: 12px;
-  word-wrap: normal;  
-  overflow-y: visible;
-  color: white;
+  font-size: 14px;
+}
+#career li,.indent{
+  font-size: 16px;
+  font-weight: bold;
 }
 #career .indent{
-  font-weight: bold;
-  font-size: 14px;
   padding-left: 0;
-}
-#career li{
-  font-weight: bold;
-  color: white;
 }
 #career div{
   box-sizing: border-box;
@@ -179,38 +211,7 @@ h1{
   overflow: hidden;
   padding: 24px 8px 24px 8px;
 }
-.rotate{
-}
-.rotate::after{
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 105%;
-  height: 83%;
-}
-.orange{
-  margin-bottom: 16px;
-}
-.orange::after{
-  background-color: orange;
-  transform: rotate(1deg);
-  top: 24px;
-  left: -8px;
-  z-index: -1;
-}
-.blue{
-  margin-top: 16px;
-}
-.blue::after{
-  background-color: lightseagreen;
-  transform: rotate(-1deg);
-  top: 8px;
-  left: -8px;
-  z-index: -2;
-}
-.bd{
-  border: 1px solid #000;
-}
+
 
 /* work */
 .card{
@@ -315,15 +316,22 @@ small{
 
 /* PC CSS */
 @media screen and (min-width:480px){
+  #profile h3{
+    margin-left: 8%;
+  }
+  #profile li{
+  }
   #profile li,
   #profile p{
-    font-size: 18px;
     margin-left: 10%;
+    font-size: 18px;
   }
-
-  #profile span{
+  #profile img{
+    top: -30%;
+  }
+  /* #profile span{
     display: block;
-  }
+  } */
   #profile img{
    width: 80%;
    max-width: 250px;
@@ -339,4 +347,6 @@ small{
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
 }
