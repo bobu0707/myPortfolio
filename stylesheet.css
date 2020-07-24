@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+/* 全体要素 css */
 html{
   scroll-behavior: smooth;
 }
@@ -26,7 +27,7 @@ h2{
 }
 h2::after{
   position: absolute;
-  top: 16px;
+  top: 20px;
   left: 0;
   z-index: -1;
   content: "";
@@ -34,7 +35,7 @@ h2::after{
   height: 8px;
   width: 100%;
   background-color: orange;
-  transform: rotate(3deg);
+  transform: rotate(1deg);
 }
 section{
   padding-top: 50px;
@@ -59,36 +60,78 @@ a:hover{
   top: 0;
   left: 0;
 }
-.base{
-  position: relative;
+.margin-top{
+  margin-top: 50px !important;
 }
-.rotate::after{
+/* 背景 css */
+.orange{
+  padding: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+.orange::after{
   content: "";
   display: inline-block;
   position: absolute;
-  width: 105%;
-  height: 83%;
-}
-.orange{
-  margin-bottom: 16px;
-}
-.orange::after{
   background-color: orange;
   transform: rotate(1deg);
-  top: 24px;
+  width: 105%;
   left: -8px;
   z-index: -1;
 }
 .blue{
-  margin-top: 16px;
+  padding: 16px 0;
+  position: relative;
+  overflow: hidden;
 }
 .blue::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
   background-color: lightseagreen;
   transform: rotate(-1deg);
-  top: 8px;
+  width: 105%;
   left: -8px;
   z-index: -2;
 }
+.name-bg::after{
+  top: 8px;
+  height: 90%;
+}
+.about-bg::after{
+  top: 8px;
+  height: 88%;
+}
+.skill-bg::after{
+  top: 24px;
+  height: 88%;
+}
+.career-bg-1::after{
+  top: 16px;
+  height: 85%;
+}
+.career-bg-2::after{
+  top: 16px;
+  height: 84%;
+}
+.contact-bg::after{
+  top: 24px;
+  height: 93%;
+}
+/* animation */
+.slide-left-on{
+  animation: fadeIn 1s forwards,
+  slideIn-left 0.5s;
+}
+.slide-right-on{
+  animation: fadeIn 1s forwards,
+  slideIn-right 0.5s;
+}
+.fadeIn-on{
+  animation: fadeIn 1s forwards;
+}
+
+/* メンテナンス用css */
 .bd{
   border: 1px solid #000;
 }
@@ -103,18 +146,18 @@ header{
 h1{
   font-weight: bold;
   color: white;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 2s;
 }
 /* nav */
 #nav{
   background: darkgray;
+  height: 50px;
 }
 #nav ul{
   display: flex;
   height: 100%;
 }
 #nav li{
-  height: 50px;
   box-sizing: border-box;
   margin: auto;
   flex-grow: 1;
@@ -133,9 +176,9 @@ h1{
   text-decoration: none;
   color: black;
 }
-/* profile-name */
+
+/* profile */
 #profile{
-  animation: fadeIn 0.5s;
   align-items: center;
   font-weight: bold;
 }
@@ -153,21 +196,20 @@ h1{
 }
 /* profile-img */
 #profile-img{
-  margin-top: 16px;
+  margin-top: -200px;
   width: 50%;
-  position: absolute;
-  top: -20%;
+  position: relative;
   left: 50%;
 }
 #profile img{
-  width: 100%;
+  width: 85%;
   height: auto;
   border-radius: 50%;
+  margin-bottom: 24px;
 }
-
 /* profile-about */
 #profile-about p{
- font-size: 12px;
+ font-size: 14px;
  word-wrap: normal; 
  text-indent: 1em;
  letter-spacing: 0.2em;
@@ -180,8 +222,9 @@ h1{
 #skill img{
   width: 80%;
   height: auto;
+  background-color: white;
 }
-#skill .flex div{
+.skill-item{
   text-align: center;
   width: 100px;
 }
@@ -193,25 +236,23 @@ h1{
 }
 
 /* career */
+#career{
+  font-weight: bold;
+}
+#career h4{
+  padding-left: 1em;
+}
 #career p{
-  text-indent: 1em;
   padding-left: 2em;
   font-size: 14px;
 }
-#career li,.indent{
-  font-size: 16px;
-  font-weight: bold;
-}
-#career .indent{
+.indent{
   padding-left: 0;
 }
-#career div{
+.career-item{
   box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  padding: 24px 8px 24px 8px;
+  padding: 24px 8px;
 }
-
 
 /* work */
 .card{
@@ -275,42 +316,50 @@ textarea:focus{
   padding: 150px;
 }
 
+/* footer */
 footer{
-  position: relative;
-  margin-top: 40px;
+  margin-top: 32px;
   background: lightseagreen;
-  height: 40px;
+  height: 48px;
   font-size: 14px;
   color: white;
-}
-small{
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  text-align: center;
 }
 #foot-link{
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-bottom: 0;
+  justify-content: space-around;
+}
+#foot-link a{
+  color: white;
 }
 #foot-link img{
   width: 20px;
   height: auto;
-}
-#end a{
-  color: white;
-  float: right;
-  margin-right:1em;
+  vertical-align: bottom;
 }
 
 /* アニメーション */
-@keyframes fadeIn{
-  0%{
+@keyframes fadeIn {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
+  }
+}
+@keyframes slideIn-left {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes slideIn-right {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(0);
   }
 }
 
@@ -319,34 +368,40 @@ small{
   #profile h3{
     margin-left: 8%;
   }
-  #profile li{
-  }
-  #profile li,
-  #profile p{
+  #profile-name p{
     margin-left: 10%;
     font-size: 18px;
   }
-  #profile img{
-    top: -30%;
+  #profile-about p{
+    margin-left: 2%;
+    font-size: 16px;
   }
-  /* #profile span{
-    display: block;
-  } */
+  #profile li{
+    margin-left: 10%;
+  }
+  #profile-img{
+    margin-top: -248px;
+  }
   #profile img{
-   width: 80%;
-   max-width: 250px;
- }
- #skill span{
-   display: flex;
-   flex-grow: 1;
- } 
- .card{
-  width: 50%;
-}
-#foot-link{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
+  width: 80%;
+  max-width: 250px;
+  }
+  #skill .container{
+  display: flex;
+  flex-grow: 1;
+  padding-bottom: 24px;
+  } 
+  .skill-bg::after{
+    height: 78%;
+  }
+  .card{
+    width: 50%;
+  }
+  form{
+    width: 80%;
+    margin-left: 10%;
+  }
+  #foot-link a{
+    font-size: 110%;
+  }
 }
