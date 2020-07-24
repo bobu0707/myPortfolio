@@ -45,10 +45,10 @@ li{
 }
 a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 a:hover{
-  color: grey;
+  opacity: 0.7;
 }
 .flex{
   display: flex;
@@ -276,6 +276,15 @@ h1{
 .card-link img{
   width: 10%;
 }
+.link-bg{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background-color: #222423;
+  margin: 0 auto;
+  padding-top: 6px;
+}
 
 /* contact */
 #form-box{
@@ -316,7 +325,7 @@ textarea:focus{
   margin-top: 0 !important;
 }
 #submit:hover{
-  background-color: lightgreen;
+  background-color: gray;
 }
 #thxMessage{
   padding: 150px;
