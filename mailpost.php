@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ内容 送信確認</title>
+    <title>メール送信完了 | メール送信フォーム</title>
     <link rel="stylesheet" type="text/css" href="https://github.com/nobu6326/myPortfolio/blob/master/stylesheet.css">
     <style>
     h3{
@@ -60,16 +60,52 @@ echo '<dt>【種類】</dt><dd>'.$category.'</dd>';
 echo '<dt>【お問い合わせ内容】</dt><dd>'.nl2br($comment).'</dd>';
 echo '</dl>';
 
-// 上記内容で送信するを表示する
-echo '<form method="post" action="mailpost.php">';
+// メール送信の実行
+echo '<form method="post" action="https://nobu6326.github.io/myPortfolio/">';
 echo '<input type="hidden" name="name" value="'.$name.'">';
 echo '<input type="hidden" name="company" value="'.$company.'">';
-echo '<input type="hidden" name="mailAddress" value="'.$mailAddress.'">';
+echo '<input type="hidden" name="mailaddress" value="'.$mailAddress.'">';
 echo '<input type="hidden" name="tel" value="'.$tel.'">';
 echo '<input type="hidden" name="category" value="'.$category.'">';
 echo '<input type="hidden" name="comment" value="'.$comment.'">';
-echo '<input id="submit" type="submit" name="okbtn" value="上記内容で送信する">';
+echo '<input id="submit" type="submit" name="backbtn" value="前のページへ戻る">';
 echo '</form>';
+
+$honbun = "";
+$honbun .= "ポートフォリオよりお問い合わせがありました。\n\n";
+$honbun .= "【お名前】\n";
+$honbun .= $name."\n\n";
+$honbun .= "【会社名】\n";
+$honbun .= $company."\n\n";
+$honbun .= "【メールアドレス】\n";
+$honbun .= $mailAddress."\n\n";
+$honbun .= "【電話番号】\n";
+$honbun .= $tel."\n\n";
+$honbun .= "【種類】\n";
+$honbun .= $category."\n\n";
+$honbun .= "【お問い合わせ内容】\n";
+$honbun .= $comment."\n\n";
+
+// エンコード処理
+mb_language("Japanese");
+mb_internal_encoding("UTF-8");
+
+// メールの作成
+$mail_to = "bobu7915@gmail.com";
+$mail_subject = "ポートフォリオよりお問い合わせ";
+$mail_body = $honbun;
+$mail_header = "from:.$mailAddress";
+
+// メール送信処理
+$mailsousin = mb_send_mail($mail_to,$mail_subject,$mail_body,$mail_header);
+
+// メール送信結果
+if($mailsousin == true){
+    echo '<p>お問い合わせメールを送信しました。</p>';
+}else{
+    echo '<p>メール送信でエラーが発生しました。</p>';
+}
+
 
 ?>
 </body>
