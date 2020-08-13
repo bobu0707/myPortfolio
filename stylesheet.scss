@@ -109,6 +109,9 @@ $link: #222423;
 $link_hover: #424443;
 $contact: gray;
 $focas: black;
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 1024px;
+
 
 html{
   scroll-behavior: smooth;
@@ -234,6 +237,9 @@ a{
   top: 0;
   left: 0;
 }
+.hide{
+  display: none;
+}
 .margin-top{
   margin-top: 80px !important;
 }
@@ -310,9 +316,9 @@ h1{
 /* profile-img */
 #profile-img{
   position: absolute;
-  width: 50%;
+  width: 45%;
   top: 16px;
-  left: 47%;
+  left: 60%;
   img{
     width: 100%;
     height: auto;
@@ -363,7 +369,6 @@ h1{
     padding-left: 1em;
   }
   p{
-    
     padding-left: 2em;
     font-size: 14px;
     letter-spacing: 1px;
@@ -428,11 +433,12 @@ h1{
 
 /* contact */
 #form-box{
+  padding-top: 44px;
   padding-bottom: 36px;
 }
 #contact{
   input{
-    margin-top: 24px;
+    margin-bottom: 24px;
     width: 100%;
     border: 1px solid $contact;
     border-radius: 5px;
@@ -446,32 +452,31 @@ h1{
   }
 }
 textarea{
-  margin-top: 16px;
   width: 100%;
   border: 1px solid $contact;
   border-radius: 5px;
   padding: 4px;
   box-sizing: border-box;
+  margin-bottom: 16px;
   &:focus{
     outline: 0;
     border: 1px solid $focas;
     border-radius: 5px;
   }
 }
-.radio-box{
-  margin-top: 16px;
-  font-size: 14px;
-  input{
-    width: auto !important;
-    margin-top: 0 !important;
+
+#submit{
+  @extend input;
+  &:hover{
+    background-color: $link_hover;
+    color: $back_ground;
   }
 }
-#submit:hover{
-  background-color: $link_hover;
-  color: $back_ground;
-}
 #thxMessage{
-  padding: 150px;
+  height: 232px;
+  padding: 80px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
 }
 
 /* footer */
@@ -503,6 +508,25 @@ small{
   font-size: 12px;
 }
 
+.flame{
+  position: relative;
+  margin: 20px auto;
+  width: 60%;
+  height: 320px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 34px;
+  }
+  a{
+    color: $link;
+  }
+}
+
 /* アニメーション */
 @keyframes fadeIn {
   0% {
@@ -529,8 +553,8 @@ small{
   }
 }
 
-/* PC CSS */
-@media screen and (min-width:480px){
+/* media query */
+@media screen and (min-width: $breakpoint-mobile){
   #profile{
     h3{
       margin-left: 8%;
@@ -541,11 +565,8 @@ small{
     }
     img{
     width: 80%;
-    max-width: 216px;
+    max-width: 200px;
     }
-  }
-  #profile-name{
-    margin-top: 16px;
   }
   #profile-top{
     height: 304px;
@@ -557,9 +578,6 @@ small{
   #profile-about p{
     margin-left: 2%;
     font-size: 16px;
-  }
-  #profile-img{
-    left: 50%;
   }
   .name-bg::after{
     top: 8px;
@@ -604,13 +622,12 @@ small{
     font-size: 110%;
   }
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: $breakpoint-tablet){
   #profile{
     img{
       position: absolute;
-      top: 8px;
-      left: 25%;
-      max-width: 244px;
+      top: 16px;
+      max-width: 250px;
     }
   }
   #profile-top{

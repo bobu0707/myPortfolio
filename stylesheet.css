@@ -94,7 +94,7 @@ hr {
   padding: 0;
 }
 
-input, select {
+input, #submit, select {
   vertical-align: middle;
 }
 
@@ -243,6 +243,10 @@ a:hover {
   left: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .margin-top {
   margin-top: 80px !important;
 }
@@ -341,9 +345,9 @@ h1 {
 /* profile-img */
 #profile-img {
   position: absolute;
-  width: 50%;
+  width: 45%;
   top: 16px;
-  left: 47%;
+  left: 60%;
 }
 
 #profile-img img {
@@ -490,11 +494,12 @@ h1 {
 
 /* contact */
 #form-box {
+  padding-top: 44px;
   padding-bottom: 36px;
 }
 
-#contact input {
-  margin-top: 24px;
+#contact input, #contact #submit {
+  margin-bottom: 24px;
   width: 100%;
   border: 1px solid gray;
   border-radius: 5px;
@@ -503,20 +508,20 @@ h1 {
           box-sizing: border-box;
 }
 
-#contact input:focus {
+#contact input:focus, #contact #submit:focus {
   outline: 0;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 textarea {
-  margin-top: 16px;
   width: 100%;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-bottom: 16px;
 }
 
 textarea:focus {
@@ -525,23 +530,17 @@ textarea:focus {
   border-radius: 5px;
 }
 
-.radio-box {
-  margin-top: 16px;
-  font-size: 14px;
-}
-
-.radio-box input {
-  width: auto !important;
-  margin-top: 0 !important;
-}
-
 #submit:hover {
   background-color: #424443;
   color: whitesmoke;
 }
 
 #thxMessage {
-  padding: 150px;
+  height: 232px;
+  padding: 80px;
+  margin-bottom: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* footer */
@@ -579,6 +578,29 @@ footer {
 
 small {
   font-size: 12px;
+}
+
+.flame {
+  position: relative;
+  margin: 20px auto;
+  width: 60%;
+  height: 320px;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flame form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 34px;
+}
+
+.flame a {
+  color: #222423;
 }
 
 /* アニメーション */
@@ -643,7 +665,7 @@ small {
   }
 }
 
-/* PC CSS */
+/* media query */
 @media screen and (min-width: 480px) {
   #profile h3 {
     margin-left: 8%;
@@ -654,10 +676,7 @@ small {
   }
   #profile img {
     width: 80%;
-    max-width: 216px;
-  }
-  #profile-name {
-    margin-top: 16px;
+    max-width: 200px;
   }
   #profile-top {
     height: 304px;
@@ -669,9 +688,6 @@ small {
   #profile-about p {
     margin-left: 2%;
     font-size: 16px;
-  }
-  #profile-img {
-    left: 50%;
   }
   .name-bg::after {
     top: 8px;
@@ -718,9 +734,8 @@ small {
 @media screen and (min-width: 1024px) {
   #profile img {
     position: absolute;
-    top: 8px;
-    left: 25%;
-    max-width: 244px;
+    top: 16px;
+    max-width: 250px;
   }
   #profile-top {
     height: 368px;
