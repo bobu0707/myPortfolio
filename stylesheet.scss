@@ -112,6 +112,22 @@ $focas: black;
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 1024px;
 
+@mixin centerize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// header font-sizeの調整
+@function get_vw($size,$viewport:320){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
 
 html{
   scroll-behavior: smooth;
@@ -169,7 +185,7 @@ html{
 }
 .contact-bg::after{
   top: 16px;
-  height: 94%;
+  height: 92%;
 }
 /* animation */
 .slide-left-on{
@@ -246,15 +262,23 @@ a{
 
 /* header */
 header{
+  @include centerize;
   background: $bule;
-  height: 96px;
+  height: 360px;
   width: 100%;
-  text-align: center;
+  div{
+    @include centerize;
+    width: 100%;
+  }
 }
 h1{
-  font-weight: bold;
-  font-size: 48px;
-  color: $back_ground;
+  @include fz_vw(72);
+  font-weight: 900;
+  color: rgba(0,0,0,0);
+  background-image: url(image/main-v.jpg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: cover;
   animation: fadeIn 2s;
 }
 /* nav */
@@ -474,7 +498,7 @@ textarea{
 }
 #thxMessage{
   height: 232px;
-  padding: 80px;
+  padding: 80px 10%;
   margin-bottom: 24px;
   box-sizing: border-box;
 }
@@ -555,6 +579,9 @@ small{
 
 /* media query */
 @media screen and (min-width: $breakpoint-mobile){
+  h1{
+    @include fz_vw(56);
+  }
   #profile{
     h3{
       margin-left: 8%;
@@ -623,6 +650,9 @@ small{
   }
 }
 @media screen and (min-width: $breakpoint-tablet){
+  h1{
+    @include fz_vw(40);
+  }
   #profile{
     img{
       position: absolute;

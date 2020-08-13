@@ -166,7 +166,7 @@ html {
 
 .contact-bg::after {
   top: 16px;
-  height: 94%;
+  height: 92%;
 }
 
 /* animation */
@@ -253,16 +253,42 @@ a:hover {
 
 /* header */
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: lightseagreen;
-  height: 96px;
+  height: 360px;
   width: 100%;
-  text-align: center;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 h1 {
-  font-weight: bold;
-  font-size: 48px;
-  color: whitesmoke;
+  font-size: 72px;
+  font-size: 22.5vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0);
+  background-image: url(image/main-v.jpg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: cover;
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
 }
@@ -537,7 +563,7 @@ textarea:focus {
 
 #thxMessage {
   height: 232px;
-  padding: 80px;
+  padding: 80px 10%;
   margin-bottom: 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -667,6 +693,10 @@ small {
 
 /* media query */
 @media screen and (min-width: 480px) {
+  h1 {
+    font-size: 56px;
+    font-size: 17.5vw;
+  }
   #profile h3 {
     margin-left: 8%;
   }
@@ -732,6 +762,10 @@ small {
 }
 
 @media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 40px;
+    font-size: 12.5vw;
+  }
   #profile img {
     position: absolute;
     top: 16px;

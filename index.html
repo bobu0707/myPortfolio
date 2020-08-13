@@ -211,7 +211,7 @@
           <iframe name="dummyIframe" style="display:none;"></iframe>
           <button id="submit" onclick="submitForm()">送信</button>
         </form>
-        <div id="thxMessage" class="hide"><h4>お問い合わせ頂き、ありがとうございます。<br>2-3営業日中にご回答いたします。</h4></div>
+        <div id="thxMessage" class="hide"><h4>お問い合わせ頂き、ありがとうございます。<br>1-2日中にご回答いたします。</h4></div>
       </div>
     </section>
   
@@ -234,7 +234,7 @@
     // メニューバー固定
     $(function(){
       $(window).scroll(function(){
-        if($(this).scrollTop() > 96){
+        if($(this).scrollTop() > 360){
           $("#nav").addClass("fixed");
           $("#main").addClass("margin-top");
         }else{
