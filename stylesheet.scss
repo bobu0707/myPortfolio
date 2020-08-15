@@ -90,7 +90,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;  
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -342,7 +342,7 @@ h1{
   position: absolute;
   width: 45%;
   top: 16px;
-  left: 60%;
+  left: 52%;
   img{
     width: 100%;
     height: auto;
@@ -357,7 +357,7 @@ h1{
   }
   p{
    font-size: 14px;
-   word-wrap: normal; 
+   word-wrap: normal;
    text-indent: -1em;
    padding-left: 1em;
    letter-spacing: 1px;
@@ -461,6 +461,7 @@ h1{
   padding-bottom: 36px;
 }
 #contact{
+  font-weight: bold;
   input{
     margin-bottom: 24px;
     width: 100%;
@@ -472,6 +473,13 @@ h1{
       outline: 0;
       border: 1px solid $focas;
       border-radius: 5px;
+    }
+  }
+  button{
+    @extend input;
+    &:hover{
+      background-color: $link_hover;
+      color: $back_ground;
     }
   }
 }
@@ -488,19 +496,14 @@ textarea{
     border-radius: 5px;
   }
 }
-
-#submit{
-  @extend input;
-  &:hover{
-    background-color: $link_hover;
-    color: $back_ground;
-  }
-}
-#thxMessage{
-  height: 232px;
+#confirm,#thxMessage{
+  text-align: center;
+  height: 350px;
   padding: 80px 10%;
-  margin-bottom: 24px;
   box-sizing: border-box;
+}
+.error{
+  color: red;
 }
 
 /* footer */
@@ -595,6 +598,9 @@ small{
     max-width: 200px;
     }
   }
+  #profile-img{
+    left: 60%;
+  }
   #profile-top{
     height: 304px;
     p{
@@ -614,7 +620,7 @@ small{
   display: flex;
   flex-grow: 1;
   padding-bottom: 24px;
-  } 
+  }
   .skill-bg::after{
   top: 16px;
   height: 91%;

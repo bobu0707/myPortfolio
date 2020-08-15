@@ -94,7 +94,7 @@ hr {
   padding: 0;
 }
 
-input, #submit, select {
+input, #contact button, select {
   vertical-align: middle;
 }
 
@@ -373,7 +373,7 @@ h1 {
   position: absolute;
   width: 45%;
   top: 16px;
-  left: 60%;
+  left: 52%;
 }
 
 #profile-img img {
@@ -524,7 +524,11 @@ h1 {
   padding-bottom: 36px;
 }
 
-#contact input, #contact #submit {
+#contact {
+  font-weight: bold;
+}
+
+#contact input, #contact button {
   margin-bottom: 24px;
   width: 100%;
   border: 1px solid gray;
@@ -534,10 +538,15 @@ h1 {
           box-sizing: border-box;
 }
 
-#contact input:focus, #contact #submit:focus {
+#contact input:focus, #contact button:focus {
   outline: 0;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+#contact button:hover {
+  background-color: #424443;
+  color: whitesmoke;
 }
 
 textarea {
@@ -556,17 +565,16 @@ textarea:focus {
   border-radius: 5px;
 }
 
-#submit:hover {
-  background-color: #424443;
-  color: whitesmoke;
-}
-
-#thxMessage {
-  height: 232px;
+#confirm, #thxMessage {
+  text-align: center;
+  height: 350px;
   padding: 80px 10%;
-  margin-bottom: 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.error {
+  color: red;
 }
 
 /* footer */
@@ -707,6 +715,9 @@ small {
   #profile img {
     width: 80%;
     max-width: 200px;
+  }
+  #profile-img {
+    left: 60%;
   }
   #profile-top {
     height: 304px;
