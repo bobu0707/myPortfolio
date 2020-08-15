@@ -206,11 +206,9 @@
       <div id="form-box" class="blue contact-bg slide-right">
         <!-- googlefrom 使用 -->
         <form id="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSegEuZUE4UMxZ7RWTCIN4jDJE8dOc1weE2ajwbQpu0wIoDYOA/formResponse" name="myForm" method="post" target="dummyIframe">
-        <!-- <form id="contact-form" action="#" name="myForm" method="post" target="dummyIframe"> -->
           <p>名前</p>
           <p id="n_error" class="error">※お名前を入力してください</p>
           <input id="in_name" type="text" name="entry.1884265043" placeholder="Name" required>
-          <p></p>
           <p>メールアドレス</p>
           <p id="m_error" class="error">※メールアドレスを入力してください</p>
           <input id="in_mail" type="email" name="emailAddress" placeholder="Email" required>
@@ -220,6 +218,7 @@
           <iframe name="dummyIframe" style="display:none;"></iframe>
           <button id="check">確認</button>
         </form>
+        <!-- 送信確認 -->
         <div id="confirm">
           <h4>下記の内容で送信します</h4>
           <p>名前：<span id="out_name"></span></p>
@@ -227,6 +226,7 @@
           <p>お問い合わせ内容：<span id="out_text"></span></p>
           <button id="submit" type="submit">送信</button>
         </div>
+        <!-- 送信完了 -->
         <div id="thxMessage">
           <h4>お問い合わせ頂き、ありがとうございます。<br>1-2日中にご回答いたします。</h4>
         </div>
