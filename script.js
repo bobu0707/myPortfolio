@@ -10,8 +10,6 @@ $(function(){
         }
     });
 });
-// スライド
-$(".slide-left,.slide-right,.fadeIn").css("opacity","0");
 // 左からスライド
 $(function(){
     $(window).scroll(function () {

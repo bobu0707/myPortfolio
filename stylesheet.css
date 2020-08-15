@@ -170,6 +170,12 @@ html {
 }
 
 /* animation */
+.slide-left,
+.slide-right,
+.fadeIn {
+  opacity: 0;
+}
+
 .slide-left-on {
   -webkit-animation: fadeIn 1s forwards, slideIn-left 0.5s;
           animation: fadeIn 1s forwards, slideIn-left 0.5s;

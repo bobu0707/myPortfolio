@@ -188,6 +188,11 @@ html{
   height: 92%;
 }
 /* animation */
+.slide-left,
+.slide-right,
+.fadeIn{
+  opacity: 0;
+}
 .slide-left-on{
   animation: fadeIn 1s forwards,
   slideIn-left 0.5s;
