@@ -20,6 +20,7 @@
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
   <!-- lightbox css -->
   <link href="lightbox.css" rel="stylesheet" />
 </head>
@@ -158,7 +159,7 @@
         </div>
       </ul>
     </section>
-    
+
     <!-- work -->
     <section id="work">
       <h2 class="slide-left">作成物</h2>
@@ -194,7 +195,7 @@
             <a class="link-bg" href="https://bobu0707.github.io/starbear" target="_blank">link</a>
             <p><a href="https://github.com/bobu0707/starbear" target="_blank"><img src="image/GitHub.png"
                   alt="GitHubへのリンク"></a></p>
-          </div>      
+          </div>
         </div>
       </div>
     </section>
@@ -205,17 +206,32 @@
       <div id="form-box" class="blue contact-bg slide-right">
         <!-- googlefrom 使用 -->
         <form id="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSegEuZUE4UMxZ7RWTCIN4jDJE8dOc1weE2ajwbQpu0wIoDYOA/formResponse" name="myForm" method="post" target="dummyIframe">
+        <!-- <form id="contact-form" action="#" name="myForm" method="post" target="dummyIframe"> -->
+          <p>名前</p>
+          <p id="n_error" class="error">※お名前を入力してください</p>
           <input id="in_name" type="text" name="entry.1884265043" placeholder="Name" required>
+          <p></p>
+          <p>メールアドレス</p>
+          <p id="m_error" class="error">※メールアドレスを入力してください</p>
           <input id="in_mail" type="email" name="emailAddress" placeholder="Email" required>
-          <textarea id="comment" name="entry.513669972" placeholder="お問い合わせ内容" rows="5" required></textarea>
+          <p>お問い合わせ内容</p>
+          <p id="t_error" class="error">※お問い合わせ内容を入力してください</p>
+          <textarea id="in_text" name="entry.513669972" rows="5" required></textarea>
           <iframe name="dummyIframe" style="display:none;"></iframe>
-          <button id="submit" onclick="submitForm()">送信</button>
+          <button id="check">確認</button>
         </form>
-        <div id="thxMessage" class="hide"><h4>お問い合わせ頂き、ありがとうございます。<br>1-2日中にご回答いたします。</h4></div>
+        <div id="confirm">
+          <h4>下記の内容で送信します</h4>
+          <p>名前：<span id="out_name"></span></p>
+          <p>メールアドレス：<span id="out_mail"></span></p>
+          <p>お問い合わせ内容：<span id="out_text"></span></p>
+          <button id="submit" type="submit">送信</button>
+        </div>
+        <div id="thxMessage">
+          <h4>お問い合わせ頂き、ありがとうございます。<br>1-2日中にご回答いたします。</h4>
+        </div>
       </div>
     </section>
-  
-  
   </div>
 <!-- footer -->
   <footer>
@@ -229,68 +245,6 @@
     <small>2020 &copy; nobuaki wada</small>
   </div>
   </footer>
-  
-  <script>
-    // メニューバー固定
-    $(function(){
-      $(window).scroll(function(){
-        if($(this).scrollTop() > 360){
-          $("#nav").addClass("fixed");
-          $("#main").addClass("margin-top");
-        }else{
-          $("#nav").removeClass("fixed");
-          $("#main").removeClass("margin-top");
-        }
-      });
-    });
-    // スライド
-    $(".slide-left,.slide-right,.fadeIn").css("opacity","0");
-    // 左からスライド
-    $(function(){
-      $(window).scroll(function(){
-        $(".slide-left").each(function(){
-          let elemPos = $(this).offset().top;
-          let scroll = $(window).scrollTop();
-          let windowHeight = $(window).height();
-          if(scroll > elemPos - windowHeight + 100){
-            $(this).addClass("slide-left-on");
-          }
-        });
-      });
-    });
-    // 右からスライド
-    $(function(){
-      $(window).scroll(function(){
-        $(".slide-right").each(function(){
-          let elemPos = $(this).offset().top;
-          let scroll = $(window).scrollTop();
-          let windowHeight = $(window).height();
-          if(scroll > elemPos - windowHeight + 150){
-            $(this).addClass("slide-right-on");
-          }
-        });
-      });
-    });
-    // フェードイン
-    $(function(){
-      $(window).scroll(function(){
-        $(".fadeIn").each(function(){
-          let elemPos = $(this).offset().top;
-          let scroll = $(window).scrollTop();
-          let windowHeight = $(window).height();
-          if(scroll > elemPos - windowHeight + 150){
-            $(this).addClass("fadeIn-on");
-          }
-        });
-      });
-    });  
-    // お問い合わせ 送信後thxMessageに切り替え
-    function submitForm(){
-    document.getElementById("contact-form").classList.add("hide");
-    document.getElementById("thxMessage").classList.remove("hide");
-    }
-
-    </script>
   <!-- lightbox js -->
   <script src="lightbox-plus-jquery.min.js"></script>
 </body>
