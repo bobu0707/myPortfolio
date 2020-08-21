@@ -206,15 +206,15 @@
       <div id="form-box" class="blue contact-bg slide-right">
         <!-- googlefrom 使用 -->
         <form id="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSegEuZUE4UMxZ7RWTCIN4jDJE8dOc1weE2ajwbQpu0wIoDYOA/formResponse" name="myForm" method="post" target="dummyIframe">
-          <p>名前</p>
+          <p>名前<span>必須</span></p>
           <p id="n_error" class="error">※お名前を入力してください</p>
-          <input id="in_name" type="text" name="entry.1884265043" placeholder="Name" required>
-          <p>メールアドレス</p>
+          <input id="in_name" type="text" name="entry.1884265043" placeholder="Name">
+          <p>メールアドレス<span>必須</span></p>
           <p id="m_error" class="error">※メールアドレスを入力してください</p>
-          <input id="in_mail" type="email" name="emailAddress" placeholder="Email" required>
-          <p>お問い合わせ内容</p>
+          <input id="in_mail" type="email" name="emailAddress" placeholder="Email">
+          <p>お問い合わせ内容<span>必須</span></p>
           <p id="t_error" class="error">※お問い合わせ内容を入力してください</p>
-          <textarea id="in_text" name="entry.513669972" rows="5" required></textarea>
+          <textarea id="in_text" name="entry.513669972" rows="5"></textarea>
           <iframe name="dummyIframe" style="display:none;"></iframe>
           <button id="check">確認</button>
         </form>
@@ -225,6 +225,7 @@
           <p>メールアドレス：<span id="out_mail"></span></p>
           <p>お問い合わせ内容：<span id="out_text"></span></p>
           <button id="submit" type="submit">送信</button>
+          <button id="return" type="return">送信</button>
         </div>
         <!-- 送信完了 -->
         <div id="thxMessage">

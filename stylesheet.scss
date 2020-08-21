@@ -474,11 +474,20 @@ h1{
     border-radius: 5px;
     padding: 4px;
     box-sizing: border-box;
+    background-color: $back_ground;
     &:focus{
       outline: 0;
       border: 1px solid $focas;
       border-radius: 5px;
     }
+  }
+  span{
+    font-size: 12px;
+    color: $back_ground;
+    background-color: red;
+    padding: 4px;
+    margin: 0 16px;
+    vertical-align: top;
   }
   button{
     @extend input;

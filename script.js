@@ -75,17 +75,36 @@ $(function(){
     });
 })
 // 入力フォーム切り替え
-$(function(){
+$(function () {
     $('#confirm,#thxMessage').hide();
-    $('#check').on('click',()=>{
+    $('#check').on('click', () => {
+        // 空欄なしチェック
+        if ($('#in_name').val() == "") {
+            $('#n_error').show();
+            return false;
+        }
+        if ($('#in_mail').val() == "") {
+            $('#m_error').show();
+            return false;
+        }
+        if ($('#in_text').val() == "") {
+            $('#t_error').show();
+            return false;
+        }
+        // 確認画面を表示
         $('#contact-form').hide();
         $('#confirm').show();
         $('#out_name').text($('#in_name').val());
         $('#out_mail').text($('#in_mail').val());
         $('#out_text').text($('#in_text').val());
     });
-    $('#submit').on('click',()=>{
+    // 確認画面画面 ボタン操作
+    $('#submit').on('click', () => {
         $('#confirm').hide();
         $('#thxMessage').show();
+    });
+    $('#return').on('click', () => {
+        $('#confirm').hide();
+        $('#contact-form').show();
     });
 })
